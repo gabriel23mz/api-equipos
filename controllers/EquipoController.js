@@ -1,0 +1,21 @@
+import { Equipo } from "../models/EquipoModel.js";
+
+export const getEquipos = async (req, res) => {
+    try {
+        const equipos = await Equipo.findAll();
+
+        return res.status(200).json({
+            success: true,
+            data: equipos
+        });
+
+    }catch (error){
+        console.error("Error getEquipos:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Error al obtener equipos"
+        });
+    }
+}
+

@@ -1,13 +1,13 @@
 import express from "express";
 import { sequelize } from "./db/conexion.js";
 import { Equipo } from "./models/EquipoModel.js";
-import equipoRouter from "./routes/EquipoRoutes.js";
+import equipoRouters from "./routes/EquipoRoutes.js";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use("/api", equipoRouter);
+app.use("/api", equipoRouters);
 
 const main = async () => {
     try {

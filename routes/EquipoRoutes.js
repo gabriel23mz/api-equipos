@@ -1,7 +1,8 @@
 import { Router } from "express";
-import {} from "../controllers/EquipoController.js";
+import { getEquipos } from "../controllers/EquipoController.js";
 
-const equipoRouter = Router();
+const equipoRouters = Router();
 
+equipoRouters.get("/equipos", getEquipos);
 
-export default equipoRouter;
+export default equipoRouters;
