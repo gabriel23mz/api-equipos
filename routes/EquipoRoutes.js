@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { getEquipos } from "../controllers/EquipoController.js";
+import { getEquipos, getEquipoById } from "../controllers/EquipoController.js";
 
 const equipoRouters = Router();
 
 equipoRouters.get("/equipos", getEquipos);
+equipoRouters.get("/equipos/:id", getEquipoById);
 
 export default equipoRouters;
